@@ -4,16 +4,20 @@ Description: >
 
 Parameters:
   VPC.Outputs.Subnet1:
-    Type: String
+    Type: AWS::EC2::Subnet::Id
     Description: Your VPC.Subnet1
 
   VPC.Outputs.Subnet2:
-    Type: String
+    Type: AWS::EC2::Subnet::Id
     Description: Your VPC.Subnet2
 
   VPC.Outputs.VpcId:
-    Type: String
+    Type: AWS::EC2::VPC::Id
     Description: Your VPC.VpcId
+    
+  CIDR:
+    Type: String
+    Description: Your CIDR RANGE
 
   TemplateBucket:
     Type: String
@@ -35,7 +39,7 @@ Resources:
         Subnet1: !Ref VPC.Outputs.Subnet1
         Subnet2: !Ref VPC.Outputs.Subnet2
         VpcId: !Ref VPC.Outputs.VpcId
-        VpcCIDR: 10.215.0.0/16.............
+        VpcCIDR: !Ref CIDR
 
 
 
