@@ -31,10 +31,6 @@ Resources:
     Properties:
       TemplateURL: !Sub https://s3.amazonaws.com/${TemplateBucket}/templates/deployment-pipeline.yaml
       Parameters:
-        GitHubUser: !Ref GitHubUser
-        GitHubToken: !Ref GitHubToken
-        GitHubRepo: !Ref GitHubRepo
-        GitHubBranch: !Ref GitHubBranch
         TemplateBucket: !Ref TemplateBucket
         Subnet1: !Ref VPC.Outputs.Subnet1
         Subnet2: !Ref VPC.Outputs.Subnet2
